@@ -1,0 +1,1 @@
+Sem budeme dávat migrační skripty
