@@ -799,6 +799,9 @@
 		<table name="cst_test_sync" prior="tbl" >
 			<column name="id" type="INT" mandatory="y" />
 			<column name="popis" type="VARCHAR" length="100" />
+			<column name="poznamka" type="STRING" >
+				<comment><![CDATA[Testovací poznámka]]></comment>
+			</column>
 			<index name="pk_cst_test_sync" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
