@@ -2391,9 +2391,12 @@
 		<function name="|" id="d88ad1c0-0011-4005-933e-0fb4eaa867f0" isSystem="false" params_known="n" />
 		<function name="~" id="d5b0ef34-11a5-454a-abe3-183d8479631e" isSystem="false" params_known="n" />
 	</schema>
-	<diagram_group name="Default" id="01ef5827-9ca5-49aa-89b3-fbba18b002ee" >
-		<diagram name="Main Diagram" id="a43fdb0b-68e4-4377-b3d9-69e7cc44c2b8" show_column_type="y" show_schema_name="y" show_relation="columns" >
-			<entity schema="dev_catalog.gold" name="cst_test_sync" color="C1D8EE" x="57" y="57" />
+	<diagram_group name="Core_Layers" id="8ddc5e95-fc7c-4cfe-b957-bbcaf2a5f84d" >
+		<diagram name="Gold" id="a6ae5c44-3bd5-4f29-8a41-5a245d703f68" show_column_type="y" show_schema_name="y" show_relation="columns" >
+			<entity schema="dev_catalog.gold" name="cst_test_sync" color="3986C1" x="57" y="57" />
 		</diagram>
+		<diagram name="Bronze" id="ea171776-2267-4fe8-b983-7e32c4e4332c" show_column_type="y" show_schema_name="y" show_relation="columns" />
+		<diagram name="Silver" id="258b23f1-3d22-42f5-b38b-bd85a2b5727f" show_column_type="y" show_schema_name="y" show_relation="columns" />
 	</diagram_group>
+	<diagram_group name="Default" id="01ef5827-9ca5-49aa-89b3-fbba18b002ee" />
 </project>

@@ -798,6 +798,7 @@
 	<schema name="gold" catalogname="dev_catalog" >
 		<table name="cst_test_sync" prior="tbl" >
 			<column name="id" type="INT" mandatory="y" />
+			<column name="popis" type="VARCHAR" length="100" />
 			<index name="pk_cst_test_sync" unique="PRIMARY_KEY" >
 				<column name="id" />
 			</index>
