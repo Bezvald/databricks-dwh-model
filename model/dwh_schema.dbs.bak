@@ -2393,7 +2393,12 @@
 	</schema>
 	<diagram_group name="Default" id="01ef5827-9ca5-49aa-89b3-fbba18b002ee" >
 		<diagram name="Main Diagram" id="a43fdb0b-68e4-4377-b3d9-69e7cc44c2b8" show_column_type="y" show_schema_name="y" show_relation="columns" >
-			<entity schema="dev_catalog.gold" name="cst_test_sync" color="C1D8EE" x="57" y="57" />
+			<entity schema="dev_catalog.gold" name="cst_test_sync" color="C1D8EE" x="399" y="171" />
+			<callout x="57" y="57" pointer="Round" >
+				<comment><![CDATA[Create new tables by right-clicking the diagram.
+Double-click the table headers, columns, or foreign keys to edit.
+The schema and tables will be saved to the model file.]]></comment>
+			</callout>
 		</diagram>
 	</diagram_group>
 </project>
