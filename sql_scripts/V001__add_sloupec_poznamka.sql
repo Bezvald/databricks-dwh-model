@@ -1,0 +1,1 @@
+ALTER TABLE dev_catalog.gold.cst_test_sync ADD COLUMNS ( poznamka STRING COMMENT 'Testovací poznámka' );
