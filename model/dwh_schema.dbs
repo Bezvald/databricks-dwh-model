@@ -830,6 +830,7 @@
 			<column name="cena_kwh" type="DECIMAL" length="10" decimal="2" mandatory="y" >
 				<comment><![CDATA[Cena za kWh]]></comment>
 			</column>
+			<column name="test" type="VARCHAR" spec="functional" />
 			<index name="pk_fact_cena" unique="PRIMARY_KEY" >
 				<column name="smlouva_id" />
 				<column name="zakaznik_id" />

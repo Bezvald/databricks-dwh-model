@@ -806,6 +806,42 @@
 				<column name="id" />
 			</index>
 		</table>
+		<table name="dim_smlouva" prior="dim_smlouv" >
+			<column name="smlouva_id" type="INT" mandatory="y" />
+			<column name="bus_id" type="INT" />
+			<index name="pk_dim_smlouva" unique="PRIMARY_KEY" >
+				<column name="smlouva_id" />
+			</index>
+		</table>
+		<table name="dim_zakaznik" prior="dim_zaka" >
+			<column name="zakaznik_id" type="INT" mandatory="y" />
+			<column name="jmeno" type="VARCHAR" length="255" />
+			<column name="prijmeni" type="VARCHAR" length="255" />
+			<index name="pk_dim_zakaznik" unique="PRIMARY_KEY" >
+				<column name="zakaznik_id" />
+			</index>
+		</table>
+		<table name="fact_cena" prior="fact_c" >
+			<column name="smlouva_id" type="INT" mandatory="y" />
+			<column name="zakaznik_id" type="INT" mandatory="y" />
+			<column name="eff_dt" type="DATE" mandatory="y" >
+				<comment><![CDATA[Effective date - datum pro řádek]]></comment>
+			</column>
+			<column name="cena_kwh" type="DECIMAL" length="10" decimal="2" mandatory="y" >
+				<comment><![CDATA[Cena za kWh]]></comment>
+			</column>
+			<index name="pk_fact_cena" unique="PRIMARY_KEY" >
+				<column name="smlouva_id" />
+				<column name="zakaznik_id" />
+				<column name="eff_dt" />
+			</index>
+			<fk name="fk_fact_cena_dim_smlouva" to_schema="dev_catalog.gold" to_table="dim_smlouva" >
+				<fk_column name="smlouva_id" pk="smlouva_id" />
+			</fk>
+			<fk name="fk_fact_cena_dim_zakaznik" to_schema="dev_catalog.gold" to_table="dim_zakaznik" >
+				<fk_column name="zakaznik_id" pk="zakaznik_id" />
+			</fk>
+		</table>
 		<function name="!" id="24779892-998e-4d9c-a433-82ebf7d91068" isSystem="false" params_known="n" />
 		<function name="%" id="fc4adaa6-5029-44a0-9d61-e938e79cebf9" isSystem="false" params_known="n" />
 		<function name="&amp;" id="a20b12a3-ed00-4e6a-93b1-548ac50839c4" isSystem="false" params_known="n" />
@@ -2398,6 +2434,9 @@
 	<diagram_group name="Core_Layers" id="8ddc5e95-fc7c-4cfe-b957-bbcaf2a5f84d" >
 		<diagram name="Gold" id="a6ae5c44-3bd5-4f29-8a41-5a245d703f68" show_column_type="y" show_schema_name="y" show_relation="columns" >
 			<entity schema="dev_catalog.gold" name="cst_test_sync" color="3986C1" x="57" y="57" />
+			<entity schema="dev_catalog.gold" name="dim_smlouva" color="C1D8EE" x="247" y="456" />
+			<entity schema="dev_catalog.gold" name="dim_zakaznik" color="C1D8EE" x="836" y="456" />
+			<entity schema="dev_catalog.gold" name="fact_cena" color="C1D8EE" x="513" y="456" />
 		</diagram>
 		<diagram name="Bronze" id="ea171776-2267-4fe8-b983-7e32c4e4332c" show_column_type="y" show_schema_name="y" show_relation="columns" />
 		<diagram name="Silver" id="258b23f1-3d22-42f5-b38b-bd85a2b5727f" show_column_type="y" show_schema_name="y" show_relation="columns" />
